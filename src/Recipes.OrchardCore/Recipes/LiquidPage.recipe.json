@@ -1,0 +1,108 @@
+{
+  "name": "LiquidPage",
+  "displayName": "LiquidPage",
+  "description": "Creates a LiquidPage content type and adds a About page.",
+  "author": "Antoine Griffard",
+  "website": "http://antoinegriffard.com",
+  "version": "2.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "liquid" ],
+
+  // The variables are evaluated the first time they are accessed, and reused across steps
+  "variables": {
+  },
+
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Liquid"
+      ]
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "LiquidPage",
+          "DisplayName": "Liquid Page",
+          "Settings": {
+            "Creatable": "True",
+            "Draftable": "True",
+            "Versionable": "True",
+            "Listable": "True",
+            "Securable": "True",
+            "Stereotype": null
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "LiquidPage",
+              "Name": "LiquidPage",
+              "Settings": {
+                "Position": "3"
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "Position": "1",
+                "DisplayName": null,
+                "Description": null,
+                "Editor": null,
+                "Pattern": "{{ ContentItem | display_text | slugify }}",
+                "AllowCustomPath": "True",
+                "AllowUpdatePath": "False",
+                "ShowHomepageOption": "False",
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "LiquidPart",
+              "Name": "LiquidPart",
+              "Settings": {
+                "Position": "2"
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "data": [
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "[js: uuid()]",
+          "ContentType": "LiquidPage",
+          "DisplayText": "About",
+          "Latest": true,
+          "Published": true,
+          "Owner": "admin",
+          "Author": "admin",
+          "LiquidPage": {},
+          "AutoroutePart": {
+            "Path": "about",
+            "SetHomepage": false
+          },
+          "LiquidPart": {
+            "Liquid": "Welcome to {{Site.SiteName}}"
+          },
+          "TitlePart": {
+            "Title": "About"
+          }
+        }
+      ]
+    }
+  ]
+}

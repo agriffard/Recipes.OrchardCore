@@ -1,0 +1,106 @@
+{
+  "name": "Widget",
+  "displayName": "Widget",
+  "description": "Creates a RawHtml content type and add a Widget in the footer zone.",
+  "author": "Antoine Griffard",
+  "website": "http://antoinegriffard.com",
+  "version": "2.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "widget" ],
+
+  // The variables are evaluated the first time they are accessed, and reused across steps
+  "variables": {
+  },
+
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Contents",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.ContentFields",
+        "OrchardCore.Widgets"
+      ]
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "RawHtml",
+          "DisplayName": "Raw Html",
+          "Settings": {
+            "Creatable": "False",
+            "Draftable": "True",
+            "Listable": "False",
+            "Securable": "True",
+            "Stereotype": "Widget"
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "RawHtml",
+              "Name": "RawHtml",
+              "Settings": {
+                "Position": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "RawHtml",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "HtmlField",
+              "Name": "Content",
+              "Settings": {
+                "DisplayName": "Content",
+                "ContentIndexSettings": {
+                  "Included": false,
+                  "Stored": false,
+                  "Analyzed": false,
+                  "Sanitized": false,
+                  "Tokenized": false
+                },
+                "Hint": null,
+                "Editor": "Multiline",
+                "Position": "0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "Data": [
+        {
+          "ContentItemId": "[js: uuid()]",
+          "ContentItemVersionId": "[js: uuid()]",
+          "ContentType": "RawHtml",
+          "DisplayName": "Footer",
+          "Latest": true,
+          "Number": 4,
+          "Published": true,
+          "Owner": "admin",
+          "Author": "admin",
+          "RawHtml": {
+            "Content": {
+              "Html": "<span class=\"text-muted float-right mr-2\">Powered by Orchard Core.</span>"
+            }
+          },
+          "LayerMetadata": {
+            "RenderTitle": false,
+            "Position": 1.0,
+            "Zone": "Footer",
+            "Layer": "Always",
+            "Title": "Footer"
+          }
+        }
+      ]
+    }
+  ]
+}

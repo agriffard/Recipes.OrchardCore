@@ -1,0 +1,46 @@
+{
+  "name": "Layers",
+  "displayName": "Layers",
+  "description": "Creates Layers and rules.",
+  "author": "Antoine Griffard",
+  "website": "http://antoinegriffard.com",
+  "version": "2.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "layers" ],
+
+  // The variables are evaluated the first time they are accessed, and reused across steps
+  "variables": {
+  },
+
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Layers"
+      ]
+    },
+    {
+      "name": "settings",
+      "LayerSettings": {
+        "Zones": [ "Content", "Footer" ]
+      }
+    },
+    {
+      "name": "layers",
+      "Layers": [
+        {
+          "Name": "Always",
+          "Rule": "true",
+          "Description": "The widgets in this layer are displayed on any page of this site."
+        },
+        {
+          "Name": "Homepage",
+          "Rule": "isHomepage()",
+          "Description": "The widgets in this layer are only displayed on the homepage."
+        }
+      ]
+    }
+  ]
+}

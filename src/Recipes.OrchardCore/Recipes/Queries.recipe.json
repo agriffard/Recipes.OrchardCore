@@ -1,0 +1,33 @@
+{
+  "name": "Queries",
+  "displayName": "Queries",
+  "description": "Creates a query to select the content items by type.",
+  "author": "Antoine Griffard",
+  "website": "http://antoinegriffard.com",
+  "version": "2.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "queries" ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Queries",
+        "OrchardCore.Queries.Sql"
+      ]
+    },
+    {
+      "name": "Queries",
+      "Queries": [
+        {
+          "Template": "SELECT DocumentId \r\nFROM ContentItemIndex \r\nWHERE Published = true AND ContentType = @type\r\nORDER BY PublishedUtc DESC",
+          "ReturnDocuments": true,
+          "Name": "Contents",
+          "Source": "Sql",
+          "Schema": null
+        }
+      ]
+    }
+  ]
+}

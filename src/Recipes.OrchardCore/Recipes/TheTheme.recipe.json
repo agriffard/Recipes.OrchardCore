@@ -1,0 +1,17 @@
+{
+  "name": "TheTheme",
+  "displayName": "TheTheme",
+  "description": "Sets TheTheme as the current site's theme.",
+  "author": "Antoine Griffard",
+  "website": "http://antoinegriffard.com",
+  "version": "2.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "theme" ],
+  "steps": [
+    {
+      "name": "Themes",
+      "Site": "TheTheme"
+    }
+  ]
+}

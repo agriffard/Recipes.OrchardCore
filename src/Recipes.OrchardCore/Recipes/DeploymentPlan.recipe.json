@@ -1,0 +1,46 @@
+{
+  "name": "DeploymentPlan",
+  "displayName": "DeploymentPlan",
+  "description": "Creates a Deployment plan to export all the content items.",
+  "author": "Antoine Griffard",
+  "website": "http://antoinegriffard.com",
+  "version": "2.0",
+  "issetuprecipe": false,
+  "categories": [ "default" ],
+  "tags": [ "deployment" ],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Deployment"
+      ]
+    },
+    {
+      "name": "deployment",
+      "Plans": [
+        {
+          "Name": "Export",
+          "Steps": [
+            {
+              "Type": "CustomFileDeploymentStep",
+              "Step": {
+                "FileName": "Export",
+                "FileContent": "Export",
+                "Id": "[js: uuid()]",
+                "Name": "CustomFileDeploymentStep"
+              }
+            },
+            {
+              "Type": "AllContentDeploymentStep",
+              "Step": {
+                "Id": "[js: uuid()]",
+                "Name": "AllContent"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

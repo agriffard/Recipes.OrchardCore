@@ -10,6 +10,16 @@
   "tags": [ "theme" ],
   "steps": [
     {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Themes",
+        // Themes
+        "TheTheme",
+        "SafeMode"
+      ]
+    },
+    {
       "name": "Themes",
       "Site": "TheTheme"
     }

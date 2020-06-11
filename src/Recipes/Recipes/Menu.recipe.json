@@ -28,6 +28,12 @@
           "Name": "Menu",
           "DisplayName": "Menu",
           "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true
+            },
             "Draftable": "True",
             "Versionable": "True",
             "Creatable": "True",

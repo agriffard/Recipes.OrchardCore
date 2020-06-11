@@ -18,9 +18,11 @@
       "name": "feature",
       "disable": [],
       "enable": [
+        "OrchardCore.Autoroute",
         "OrchardCore.Contents",
         "OrchardCore.ContentTypes",
-        "OrchardCore.Liquid"
+        "OrchardCore.Liquid",
+        "OrchardCore.Title"
       ]
     },
     {
@@ -35,7 +37,13 @@
             "Versionable": "True",
             "Listable": "True",
             "Securable": "True",
-            "Stereotype": null
+            "Stereotype": null,
+            "FullTextAspectSettings": {},
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true
+            }
           },
           "ContentTypePartDefinitionRecords": [
             {
@@ -57,21 +65,35 @@
                 "AllowCustomPath": "True",
                 "AllowUpdatePath": "False",
                 "ShowHomepageOption": "False",
-                "ContentIndexSettings": {}
+                "ContentIndexSettings": {},
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
               }
             },
             {
               "PartName": "LiquidPart",
               "Name": "LiquidPart",
               "Settings": {
-                "Position": "2"
+                "Position": "2",
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
               }
             },
             {
               "PartName": "TitlePart",
               "Name": "TitlePart",
               "Settings": {
-                "Position": "0"
+                "Position": "0",
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
               }
             }
           ]
@@ -96,7 +118,7 @@
             "SetHomepage": false
           },
           "LiquidPart": {
-            "Liquid": "Welcome to {{Site.SiteName}}"
+            "Liquid": "[file:text('Snippets/about.liquid')]"
           },
           "TitlePart": {
             "Title": "About"

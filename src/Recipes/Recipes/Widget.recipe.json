@@ -1,6 +1,6 @@
 {
   "name": "Widget",
-  "displayName": "Widget",
+  "displayName": "5) Widget",
   "description": "Creates a RawHtml content type and add a Widget in the footer zone.",
   "author": "Antoine Griffard",
   "website": "http://antoinegriffard.com",
@@ -89,7 +89,7 @@
           "Author": "admin",
           "RawHtml": {
             "Content": {
-              "Html": "<span class=\"text-muted float-right mr-2\">Powered by Orchard Core.</span>"
+              "Html": "<span class=\"text-muted float-right mr-2\">Powered by Orchard Core</span>"
             }
           },
           "LayerMetadata": {

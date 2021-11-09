@@ -1,6 +1,6 @@
 {
   "name": "DeploymentPlan",
-  "displayName": "DeploymentPlan",
+  "displayName": "8) DeploymentPlan",
   "description": "Creates a Deployment plan to export all the content items.",
   "author": "Antoine Griffard",
   "website": "http://antoinegriffard.com",

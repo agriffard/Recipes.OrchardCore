@@ -1,18 +1,17 @@
 {
   "name": "Homepage",
-  "displayName": "Homepage",
+  "displayName": "2) Homepage",
   "description": "Creates a Page and Rich Html content type and adds a Homepage.",
   "author": "Antoine Griffard",
   "website": "http://antoinegriffard.com",
-  "version": "2.0",
+  "version": "1.0",
   "issetuprecipe": false,
-  "categories": [ "default" ],
-  "tags": [ "page" ],
-
-  // The variables are evaluated the first time they are accessed, and reused across steps
-  "variables": {
-  },
-
+  "categories": [
+    "Content types"
+  ],
+  "tags": [
+    "Page"
+  ],
   "steps": [
     {
       "name": "feature",
@@ -87,86 +86,33 @@
                   "Position": "0"
                 }
               }
-            },
-            {
-              "Name": "RichHtml",
-              "DisplayName": "Rich Html",
-              "Settings": {
-                "Creatable": "False",
-                "Draftable": "True",
-                "Versionable": "False",
-                "Listable": "False",
-                "Securable": "True",
-                "Stereotype": "Widget"
-              },
-              "ContentTypePartDefinitionRecords": [
-                {
-                  "PartName": "RichHtml",
-                  "Name": "RichHtml",
-                  "Settings": {
-                    "ContentTypePartSettings": {
-                      "Position": "0"
-                    }
-                  }
-                }
-              ]
-            }
-          ],
-          "ContentParts": [
-            {
-              "Name": "RichHtml",
-              "Settings": {},
-              "ContentPartFieldDefinitionRecords": [
-                {
-                  "FieldName": "HtmlField",
-                  "Name": "Content",
-                  "Settings": {
-                    "DisplayName": "Content",
-                    "Editor": "Wysiwyg",
-                    "DisplayMode": null,
-                    "Hint": null,
-                    "ContentIndexSettings": {
-                      "Included": false,
-                      "Stored": false,
-                      "Analyzed": false,
-                      "Sanitized": false,
-                      "Tokenized": false,
-                      "Template": null
-                    },
-                    "ContentTypePartSettings": {
-                      "Position": "0"
-                    }
-                  }
-                }
-              ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "name": "content",
+      "data": [
         {
-          "name": "Content",
-          "data": [
-            {
-              "ContentItemId": "[js: uuid()]",
-              "ContentItemVersionId": "[js: uuid()]",
-              "ContentType": "Page",
-              "DisplayText": "Home",
-              "Latest": true,
-              "Published": true,
-              "Owner": "admin",
-              "Author": "admin",
-              "Page": {},
-              "AutoroutePart": {
-                "Path": "home",
-                "SetHomepage": true
-              },
-              "HtmlBodyPart": {
-                "Html": "[file:text('Snippets/homepage.liquid')]"
-              },
-              "TitlePart": {
-                "Title": "Home"
-              }
-            }
-          ]
+          "ContentItemId": "[js: uuid()]",
+          "ContentType": "Page",
+          "DisplayText": "Home",
+          "Latest": true,
+          "Published": true,
+          "Owner": "admin",
+          "Author": "admin",
+          "Page": {},
+          "AutoroutePart": {
+            "Path": "home",
+            "SetHomepage": true
+          },
+          "HtmlBodyPart": {
+            "Html": "[file:text('Snippets/homepage.liquid')]"
+          },
+          "TitlePart": {
+            "Title": "Home"
+          }
         }
       ]
     }

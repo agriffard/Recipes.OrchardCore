@@ -6,7 +6,7 @@
     <RepositoryUrl>https://github.com/agriffard/Recipes.OrchardCore</RepositoryUrl>
     <PackageProjectUrl>https://github.com/agriffard/Recipes.OrchardCore</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/agriffard/Recipes.OrchardCore/blob/master/LICENSE.txt</PackageLicenseUrl>
-    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net6.0</TargetFrameworks>
     <VersionSuffix Condition="'$(VersionSuffix)'!='' AND '$(BuildNumber)' != ''">$(VersionSuffix)-$(BuildNumber)</VersionSuffix>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugType>embedded</DebugType>

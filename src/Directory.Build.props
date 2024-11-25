@@ -5,7 +5,7 @@
     <Title>Recipes module for Orchard Core</Title>
     <Description>The Recipes module allows you to execute useful Orchard Core recipes.</Description>
     <PackageTags>Recipes;OrchardCore</PackageTags>
-    <VersionPrefix>2.1.0</VersionPrefix>
+    <VersionPrefix>2.1.1</VersionPrefix>
     <VersionSuffix></VersionSuffix>
   </PropertyGroup>
 
